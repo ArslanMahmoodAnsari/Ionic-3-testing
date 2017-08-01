@@ -10,6 +10,7 @@ import { LoggedinPage } from '../loggedin/loggedin';
 })
 export class LoginPage {
 
+  //binding the varliable from the front End
 	@ViewChild('userName') uname;
 	@ViewChild('password') pass;
   constructor(private alertCtrl:AlertController ,private fire:AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
@@ -18,7 +19,7 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-
+  // to show alert message on success of loginUser()
   alert(message:string){
   	this.alertCtrl.create({
       title: 'Info!',
@@ -26,6 +27,7 @@ export class LoginPage {
       buttons: ['OK']
     }).present();
   }
+  // authenticate user through firebase
   loginUser(){
   	this.fire.auth.signInWithEmailAndPassword(this.uname.value, this.pass.value)
   	.then (data =>{

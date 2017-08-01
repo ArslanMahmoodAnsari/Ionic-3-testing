@@ -12,6 +12,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { LoggedinPage } from '../pages/loggedin/loggedin';
 
+//for fireBase Authentication
 const fireBaseAuth = {
     apiKey: "AIzaSyD199FiSB17M0dwOhrbx7LCbAiGQxndKJo",
     authDomain: "ionicauth-85b38.firebaseapp.com",

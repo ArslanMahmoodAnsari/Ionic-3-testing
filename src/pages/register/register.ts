@@ -11,12 +11,14 @@ import { LoggedinPage } from '../loggedin/loggedin';
 })
 export class RegisterPage {
 
-
+  //binding the varliable from the front End
 	@ViewChild('userName') uname;
 	@ViewChild('password') pass;
+
   constructor(private alertCtrl:AlertController ,private fire:AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  // to show alert message on success of registerUser()
   alert(message:string){
     this.alertCtrl.create({
       title: 'Info!',
@@ -28,6 +30,8 @@ export class RegisterPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
+
+  // authenticate user and add user in fireBase 
   registerUser() {
   	this.fire.auth.createUserWithEmailAndPassword(this.uname.value, this.pass.value)
   	.then (data =>{
